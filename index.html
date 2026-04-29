@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashiur Math Care</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1e40af; /* Deep Professional Blue */
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Bengali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Top Action Cards (Courses & Books) */
+        .action-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: -30px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--white);
+            width: 300px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            border-top-color: var(--primary-color);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .card:hover i {
+            color: var(--primary-color);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Instructor Info */
+        .instructor-wrapper {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .instructor-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .instructor-header h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .instructor-details {
+            list-style: none;
+            font-size: 1.1rem;
+        }
+
+        .instructor-details li {
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .instructor-details li:last-child {
+            border-bottom: none;
+        }
+
+        .instructor-details i {
+            color: var(--secondary-color);
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Experience Timeline */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .exp-card {
+            background: var(--white);
+            padding: 25px;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .exp-year {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Footer & Socials */
+        footer {
+            background-color: var(--text-main);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .fb-btn {
+            background-color: #1877f2;
+        }
+        
+        .fb-btn:hover {
+            background-color: #145dbf;
+            transform: translateY(-3px);
+        }
+
+        .wa-btn {
+            background-color: #25d366;
+        }
+
+        .wa-btn:hover {
+            background-color: #1ebe57;
+            transform: translateY(-3px);
+        }
+
+        footer p {
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .action-cards { margin-top: 20px; }
+            .card { width: 100%; max-width: 350px; }
+            .instructor-wrapper { padding: 20px; }
+            .instructor-header h3 { font-size: 1.8rem; }
+            .social-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Mashiur Math Care</h1>
+            <p>Empowering Students Through Excellence in Mathematics</p>
+        </div>
+    </header>
+
+    <div class="action-cards">
+        <a href="https://mashiurmathcare.github.io/courses/" class="card">
+            <i class="fas fa-graduation-cap"></i>
+            <h2>Courses</h2>
+            <p>Explore our premium math courses</p>
+        </a>
+        <a href="https://mashiurmathcare.github.io/books/" class="card">
+            <i class="fas fa-book-open"></i>
+            <h2>Books</h2>
+            <p>Browse our collection of learning materials</p>
+        </a>
+    </div>
+
+    <main class="container">
+        
+        <section id="instructor">
+            <h2 class="section-title">Instructor Profile</h2>
+            <div class="instructor-wrapper">
+                <div class="instructor-header">
+                    <h3>মো: মশিউর রহমান</h3>
+                </div>
+                <ul class="instructor-details">
+                    <li>
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div>
+                            <strong>প্রভাষক</strong><br>
+                            এল.এ.এম. ইউনাইটেড মহিলা কলেজ, দুমকী, পটুয়াখালী।
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-history"></i>
+                        <div>
+                            <strong>এক্স প্রভাষক</strong><br>
+                            চান্নিরচক লক্ষ্মণ চন্দ্র স্কুল এন্ড কলেজে, কয়রা, খুলনা।
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <strong>লেকচারার (গণিত)</strong><br>
+                            ওরাকল BCS কোচিং, বরিশাল ব্রাঞ্চ।
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <div class="exp-card">
+                    <span class="exp-year">২০১২ - বর্তমান</span>
+                    <p>মেজর এবং নন-মেজর অনার্স গণিত পড়ানোর অভিজ্ঞতা।</p>
+                </div>
+                <div class="exp-card">
+                    <span class="exp-year">২০১৮ - বর্তমান</span>
+                    <p>নিবন্ধন গণিতের অফলাইনে কোর্স পরিচালনার অভিজ্ঞতা।</p>
+                </div>
+                <div class="exp-card">
+                    <span class="exp-year">২০২৩ - বর্তমান</span>
+                    <p>অনলাইন প্লাটফর্মে নিবন্ধন গণিত কোর্স পরিচালনার অভিজ্ঞতা।</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <p>Join our community for the latest updates, courses, and math discussions.</p>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1QFRBb63xH/" target="_blank" class="social-btn fb-btn">
+                    <i class="fab fa-facebook-f"></i> Facebook Page
+                </a>
+                <a href="https://www.facebook.com/share/g/1BDM28jNxw/" target="_blank" class="social-btn fb-btn">
+                    <i class="fab fa-facebook-square"></i> Facebook Group
+                </a>
+                <a href="https://wa.me/8801711036019" target="_blank" class="social-btn wa-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <p>&copy; 2026 Mashiur Math Care. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
